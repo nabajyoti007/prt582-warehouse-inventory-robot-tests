@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.13.15 on win32)" generated="2026-10-12T01:55:22.013833" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Group Crud" source="C:\Users\nabas\OneDrive\Desktop\WarehouseRobotTesting_Final\final_tests\test_group_crud.robot">
+<test id="s1-t1" name="Group Form Is Available" line="67">
+<kw name="Login As Admin" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-10-12T01:55:22.441998" level="INFO">Opening browser 'chrome' to base url 'http://localhost/warehouse-inventory-system-master/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-10-12T01:55:22.441576" elapsed="2.339805"/>
+</kw>
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>0.25 seconds</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2026-10-12T01:55:24.781824" elapsed="0.000763"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-10-12T01:55:24.782901" elapsed="0.295481"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-10-12T01:55:25.079402" level="INFO">Typing text 'admin' into text field 'xpath=(//input)[1]'.</msg>
+<arg>xpath=(//input)[1]</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-10-12T01:55:25.078699" elapsed="0.860839"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-10-12T01:55:25.940284" level="INFO">Typing password into text field 'xpath=(//input)[2]'.</msg>
+<msg time="2026-10-12T01:55:26.474521" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>xpath=(//input)[2]</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-10-12T01:55:25.939841" elapsed="0.845593"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-10-12T01:55:26.786159" level="INFO">Clicking button 'xpath=//button[contains(.,'Login')]'.</msg>
+<arg>xpath=//button[contains(.,'Login')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-10-12T01:55:26.785721" elapsed="1.612761"/>
+</kw>
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>home.php</arg>
+<arg>10s</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-10-12T01:55:28.398843" elapsed="0.258880"/>
+</kw>
+<status status="PASS" start="2026-10-12T01:55:22.440427" elapsed="6.217593"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-10-12T01:55:28.658851" level="INFO">Opening url 'http://localhost/warehouse-inventory-system-master/add_group.php'</msg>
+<arg>${ADD_GROUP_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-10-12T01:55:28.658541" elapsed="0.308997"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>name=group-name</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-10-12T01:55:28.968099" elapsed="0.262337"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-10-12T01:55:29.490449" level="INFO">Current page contains element 'name=group-name'.</msg>
+<arg>name=group-name</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-10-12T01:55:29.230972" elapsed="0.259665"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-10-12T01:55:29.751110" level="INFO">Current page contains element 'name=group-level'.</msg>
+<arg>name=group-level</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-10-12T01:55:29.491151" elapsed="0.260147"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-10-12T01:55:30.012122" level="INFO">Current page contains element 'name=status'.</msg>
+<arg>name=status</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-10-12T01:55:29.751758" elapsed="0.260585"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2026-10-12T01:55:30.012962" elapsed="2.408565"/>
+</kw>
+<status status="PASS" start="2026-10-12T01:55:22.439267" elapsed="9.982610"/>
+</test>
+<test id="s1-t2" name="Complete Group CRUD Workflow" line="77">
+<kw name="Login As Admin" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-10-12T01:55:32.424092" level="INFO">Opening browser 'chrome' to base url 'http://localhost/warehouse-inventory-system-master/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-10-12T01:55:32.423807" elapsed="2.777188"/>
+</kw>
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>0.25 seconds</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2026-10-12T01:55:35.201301" elapsed="0.000315"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-10-12T01:55:35.201763" elapsed="0.289224"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-10-12T01:55:35.492037" level="INFO">Typing text 'admin' into text field 'xpath=(//input)[1]'.</msg>
+<arg>xpath=(//input)[1]</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-10-12T01:55:35.491431" elapsed="0.857852"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-10-12T01:55:36.350006" level="INFO">Typing password into text field 'xpath=(//input)[2]'.</msg>
+<msg time="2026-10-12T01:55:36.894669" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>xpath=(//input)[2]</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-10-12T01:55:36.349585" elapsed="0.847944"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-10-12T01:55:37.198398" level="INFO">Clicking button 'xpath=//button[contains(.,'Login')]'.</msg>
+<arg>xpath=//button[contains(.,'Login')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-10-12T01:55:37.197914" elapsed="1.670312"/>
+</kw>
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>home.php</arg>
+<arg>10s</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-10-12T01:55:38.868611" elapsed="0.256709"/>
+</kw>
+<status status="PASS" start="2026-10-12T01:55:32.423422" elapsed="6.702209"/>
+</kw>
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2026-10-12T01:55:39.126592" level="INFO">${timestamp} = 20261012015539</msg>
+<var>${timestamp}</var>
+<arg>result_format=%Y%m%d%H%M%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2026-10-12T01:55:39.126127" elapsed="0.000510"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-10-12T01:55:39.127623" level="INFO">${GROUP_NAME} = Robot Group 20261012015539</msg>
+<var>${GROUP_NAME}</var>
+<arg>Robot Group ${timestamp}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-10-12T01:55:39.127028" elapsed="0.000641"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-10-12T01:55:39.128505" level="INFO">${UPDATED_GROUP} = Robot Group UPDATED 20261012015539</msg>
+<var>${UPDATED_GROUP}</var>
+<arg>Robot Group UPDATED ${timestamp}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-10-12T01:55:39.128052" elapsed="0.000707"/>
+</kw>
+<kw name="Get Next Available Group Level">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-10-12T01:55:39.129881" level="INFO">Opening url 'http://localhost/warehouse-inventory-system-master/group.php'</msg>
+<arg>${GROUP_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-10-12T01:55:39.129708" elapsed="0.323604"/>
+</kw>
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>group.php</arg>
+<arg>10s</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-10-12T01:55:39.453720" elapsed="0.257048"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2026-10-12T01:55:39.974937" level="INFO">${level_cells} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="c9ba2b83bd1be8998202658cc89469aa", element="f.C8BCEA5E997E3A010FB3B060CDE2E4F5.d.AAEF398921599125A99998D7EFAF1C0F.e.46")&gt;, &lt;selenium.webdriv...</msg>
+<var>${level_cells}</var>
+<arg>xpath=//table//tbody/tr/td[3]</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2026-10-12T01:55:39.711073" elapsed="0.263969"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2026-10-12T01:55:39.975879" level="INFO">${levels} = []</msg>
+<var>${levels}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2026-10-12T01:55:39.975347" elapsed="0.000592"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-10-12T01:55:40.242608" level="INFO">${text} = 1</msg>
+<var>${text}</var>
+<arg>${cell}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-10-12T01:55:39.976870" elapsed="0.265845"/>
+</kw>
+<if>
+<branch type="IF" condition="'${text}' != ''">
+<kw name="Convert To Integer" owner="BuiltIn">
+<msg time="2026-10-12T01:55:40.244020" level="INFO">${number} = 1</msg>
+<var>${number}</var>
+<arg>${text}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<status status="PASS" start="2026-10-12T01:55:40.243441" elapsed="0.000668"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${levels}</arg>
+<arg>${number}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2026-10-12T01:55:40.244305" elapsed="0.000337"/>
+</kw>
+<status status="PASS" start="2026-10-12T01:55:40.242978" elapsed="0.001749"/>
+</branch>
+<status status="PASS" start="2026-10-12T01:55:40.242914" elapsed="0.001897"/>
+</if>
+<var name="${cell}">&lt;selenium.webdriver.remote.webelement.WebElement (session="c9ba2b83bd1be8998202658cc89469aa", element="f.C8BCEA5E997E3A010FB3B060CDE2E4F5.d.AAEF398921599125A99998D7EFAF1C0F.e.46")&gt;</var>
+<status status="PASS" start="2026-10-12T01:55:39.976661" elapsed="0.268194"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-10-12T01:55:40.505753" level="INFO">${text} = 2</msg>
+<var>${text}</var>
+<arg>${cell}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-10-12T01:55:40.245295" elapsed="0.260570"/>
+</kw>
+<if>
+<branch type="IF" condition="'${text}' != ''">
+<kw name="Convert To Integer" owner="BuiltIn">
+<msg time="2026-10-12T01:55:40.507148" level="INFO">${number} = 2</msg>
+<var>${number}</var>
+<arg>${text}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<status status="PASS" start="2026-10-12T01:55:40.506554" elapsed="0.000676"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${levels}</arg>
+<arg>${number}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2026-10-12T01:55:40.507419" elapsed="0.000320"/>
+</kw>
+<status status="PASS" start="2026-10-12T01:55:40.506114" elapsed="0.001700"/>
+</branch>
+<status status="PASS" start="2026-10-12T01:55:40.506061" elapsed="0.001812"/>
+</if>
+<var name="${cell}">&lt;selenium.webdriver.remote.webelement.WebElement (session="c9ba2b83bd1be8998202658cc89469aa", element="f.C8BCEA5E997E3A010FB3B060CDE2E4F5.d.AAEF398921599125A99998D7EFAF1C0F.e.47")&gt;</var>
+<status status="PASS" start="2026-10-12T01:55:40.245146" elapsed="0.262760"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-10-12T01:55:40.767023" level="INFO">${text} = 3</msg>
+<var>${text}</var>
+<arg>${cell}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-10-12T01:55:40.508237" elapsed="0.258869"/>
+</kw>
+<if>
+<branch type="IF" condition="'${text}' != ''">
+<kw name="Convert To Integer" owner="BuiltIn">
+<msg time="2026-10-12T01:55:40.768155" level="INFO">${number} = 3</msg>
+<var>${number}</var>
+<arg>${text}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<status status="PASS" start="2026-10-12T01:55:40.767658" elapsed="0.000537"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${levels}</arg>
+<arg>${number}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2026-10-12T01:55:40.768343" elapsed="0.000279"/>
+</kw>
+<status status="PASS" start="2026-10-12T01:55:40.767293" elapsed="0.001396"/>
+</branch>
+<status status="PASS" start="2026-10-12T01:55:40.767258" elapsed="0.001489"/>
+</if>
+<var name="${cell}">&lt;selenium.webdriver.remote.webelement.WebElement (session="c9ba2b83bd1be8998202658cc89469aa", element="f.C8BCEA5E997E3A010FB3B060CDE2E4F5.d.AAEF398921599125A99998D7EFAF1C0F.e.48")&gt;</var>
+<status status="PASS" start="2026-10-12T01:55:40.508123" elapsed="0.260655"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-10-12T01:55:41.028057" level="INFO">${text} = 4</msg>
+<var>${text}</var>
+<arg>${cell}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-10-12T01:55:40.769108" elapsed="0.259050"/>
+</kw>
+<if>
+<branch type="IF" condition="'${text}' != ''">
+<kw name="Convert To Integer" owner="BuiltIn">
+<msg time="2026-10-12T01:55:41.029586" level="INFO">${number} = 4</msg>
+<var>${number}</var>
+<arg>${text}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<status status="PASS" start="2026-10-12T01:55:41.028871" elapsed="0.000779"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${levels}</arg>
+<arg>${number}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2026-10-12T01:55:41.029878" elapsed="0.000403"/>
+</kw>
+<status status="PASS" start="2026-10-12T01:55:41.028401" elapsed="0.001975"/>
+</branch>
+<status status="PASS" start="2026-10-12T01:55:41.028352" elapsed="0.002113"/>
+</if>
+<var name="${cell}">&lt;selenium.webdriver.remote.webelement.WebElement (session="c9ba2b83bd1be8998202658cc89469aa", element="f.C8BCEA5E997E3A010FB3B060CDE2E4F5.d.AAEF398921599125A99998D7EFAF1C0F.e.49")&gt;</var>
+<status status="PASS" start="2026-10-12T01:55:40.768989" elapsed="0.261525"/>
+</iter>
+<var>${cell}</var>
+<value>@{level_cells}</value>
+<status status="PASS" start="2026-10-12T01:55:39.976092" elapsed="1.054514"/>
+</for>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2026-10-12T01:55:41.031614" level="INFO">Length is 4.</msg>
+<msg time="2026-10-12T01:55:41.031765" level="INFO">${count} = 4</msg>
+<var>${count}</var>
+<arg>${levels}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2026-10-12T01:55:41.030849" elapsed="0.000972"/>
+</kw>
+<if>
+<branch type="IF" condition="${count} == 0">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${NEXT_LEVEL}</var>
+<arg>1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-10-12T01:55:41.032319" elapsed="0.000051"/>
+</kw>
+<status status="NOT RUN" start="2026-10-12T01:55:41.031982" elapsed="0.000481"/>
+</branch>
+<branch type="ELSE">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-10-12T01:55:41.033634" level="INFO">${MAX_LEVEL} = 4</msg>
+<var>${MAX_LEVEL}</var>
+<arg>max(${levels})</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-10-12T01:55:41.032870" elapsed="0.000823"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-10-12T01:55:41.034421" level="INFO">${NEXT_LEVEL} = 5</msg>
+<var>${NEXT_LEVEL}</var>
+<arg>${MAX_LEVEL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-10-12T01:55:41.033898" elapsed="0.000574"/>
+</kw>
+<status status="PASS" start="2026-10-12T01:55:41.032686" elapsed="0.001870"/>
+</branch>
+<status status="PASS" start="2026-10-12T01:55:41.031947" elapsed="0.002675"/>
+</if>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Next available group level: ${NEXT_LEVEL}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-10-12T01:55:41.034769" elapsed="0.000565"/>
+</kw>
+<return>
+<value>${NEXT_LEVEL}</value>
+<status status="PASS" start="2026-10-12T01:55:41.035477" elapsed="0.000126"/>
+</return>
+<msg time="2026-10-12T01:55:41.035846" level="INFO">${GROUP_LEVEL} = 5</msg>
+<var>${GROUP_LEVEL}</var>
+<status status="PASS" start="2026-10-12T01:55:39.129389" elapsed="1.906495"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-10-12T01:55:41.036440" level="INFO">Opening url 'http://localhost/warehouse-inventory-system-master/add_group.php'</msg>
+<arg>${ADD_GROUP_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-10-12T01:55:41.036239" elapsed="0.302424"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>name=group-name</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-10-12T01:55:41.339160" elapsed="0.263634"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-10-12T01:55:41.603992" level="INFO">Typing text 'Robot Group 20261012015539' into text field 'name=group-name'.</msg>
+<arg>name=group-name</arg>
+<arg>${GROUP_NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-10-12T01:55:41.603302" elapsed="0.852527"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-10-12T01:55:42.456876" level="INFO">Typing text '5' into text field 'name=group-level'.</msg>
+<arg>name=group-level</arg>
+<arg>${GROUP_LEVEL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-10-12T01:55:42.456336" elapsed="0.822548"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2026-10-12T01:55:43.280103" level="INFO">Selecting options from selection list 'name=status' by value 1.</msg>
+<arg>name=status</arg>
+<arg>1</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2026-10-12T01:55:43.279714" elapsed="1.559455"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-10-12T01:55:44.840069" level="INFO">Clicking button 'xpath=//button[contains(.,'Update')]'.</msg>
+<arg>xpath=//button[contains(.,'Update')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-10-12T01:55:44.839663" elapsed="1.399577"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-10-12T01:55:47.240501" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-10-12T01:55:46.239771" elapsed="1.000899"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-10-12T01:55:47.241468" level="INFO">Opening url 'http://localhost/warehouse-inventory-system-master/group.php'</msg>
+<arg>${GROUP_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-10-12T01:55:47.241180" elapsed="0.306000"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${GROUP_NAME}</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-10-12T01:55:47.547751" elapsed="0.263494"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-10-12T01:55:47.812271" level="INFO">${row} = xpath=//tr[.//td[contains(.,'Robot Group 20261012015539')]]</msg>
+<var>${row}</var>
+<arg>xpath=//tr[.//td[contains(.,'${GROUP_NAME}')]]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-10-12T01:55:47.811727" elapsed="0.000586"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-10-12T01:55:48.074484" level="INFO">Current page contains element 'xpath=//tr[.//td[contains(.,'Robot Group 20261012015539')]]'.</msg>
+<arg>${row}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-10-12T01:55:47.812685" elapsed="0.261986"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Group created successfully: ${GROUP_NAME}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-10-12T01:55:48.075207" elapsed="0.000946"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2026-10-12T01:55:48.598336" level="INFO">${EDIT_URL} = http://localhost/warehouse-inventory-system-master/edit_group.php?id=6</msg>
+<var>${EDIT_URL}</var>
+<arg>${row}//a[contains(@href,'edit_group.php')]</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2026-10-12T01:55:48.076774" elapsed="0.521640"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Dynamic group edit URL: ${EDIT_URL}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-10-12T01:55:48.598880" elapsed="0.000574"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-10-12T01:55:48.599993" level="INFO">Opening url 'http://localhost/warehouse-inventory-system-master/edit_group.php?id=6'</msg>
+<arg>${EDIT_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-10-12T01:55:48.599776" elapsed="0.304088"/>
+</kw>
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>edit_group.php</arg>
+<arg>10s</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-10-12T01:55:48.904347" elapsed="0.256624"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>name=group-name</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-10-12T01:55:49.161463" elapsed="0.258641"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>name=group-name</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-10-12T01:55:49.420626" elapsed="0.536710"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-10-12T01:55:49.958339" level="INFO">Typing text 'Robot Group UPDATED 20261012015539' into text field 'name=group-name'.</msg>
+<arg>name=group-name</arg>
+<arg>${UPDATED_GROUP}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-10-12T01:55:49.957899" elapsed="0.876241"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>name=group-level</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-10-12T01:55:50.834648" elapsed="0.540972"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-10-12T01:55:51.377037" level="INFO">Typing text '5' into text field 'name=group-level'.</msg>
+<arg>name=group-level</arg>
+<arg>${GROUP_LEVEL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-10-12T01:55:51.376443" elapsed="0.826808"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2026-10-12T01:55:52.204277" level="INFO">Selecting options from selection list 'name=status' by value 1.</msg>
+<arg>name=status</arg>
+<arg>1</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2026-10-12T01:55:52.203837" elapsed="1.547060"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-10-12T01:55:53.751780" level="INFO">Clicking button 'xpath=//button[contains(.,'Update')]'.</msg>
+<arg>xpath=//button[contains(.,'Update')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-10-12T01:55:53.751399" elapsed="1.443585"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-10-12T01:55:56.196250" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-10-12T01:55:55.195483" elapsed="1.000985"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-10-12T01:55:56.197303" level="INFO">Opening url 'http://localhost/warehouse-inventory-system-master/group.php'</msg>
+<arg>${GROUP_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-10-12T01:55:56.197008" elapsed="0.327857"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${UPDATED_GROUP}</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-10-12T01:55:56.525383" elapsed="0.262800"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-10-12T01:55:56.789346" level="INFO">${updated_row} = xpath=//tr[.//td[contains(.,'Robot Group UPDATED 20261012015539')]]</msg>
+<var>${updated_row}</var>
+<arg>xpath=//tr[.//td[contains(.,'${UPDATED_GROUP}')]]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-10-12T01:55:56.788745" elapsed="0.000644"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-10-12T01:55:57.051579" level="INFO">Current page contains element 'xpath=//tr[.//td[contains(.,'Robot Group UPDATED 20261012015539')]]'.</msg>
+<arg>${updated_row}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-10-12T01:55:56.789769" elapsed="0.261995"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Group updated successfully: ${UPDATED_GROUP}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-10-12T01:55:57.052508" elapsed="0.000704"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2026-10-12T01:55:57.572436" level="INFO">${DELETE_URL} = http://localhost/warehouse-inventory-system-master/delete_group.php?id=6</msg>
+<var>${DELETE_URL}</var>
+<arg>${updated_row}//a[contains(@href,'delete_group.php')]</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2026-10-12T01:55:57.053554" elapsed="0.518967"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Dynamic group delete URL: ${DELETE_URL}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-10-12T01:55:57.573010" elapsed="0.000658"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-10-12T01:55:57.574322" level="INFO">Opening url 'http://localhost/warehouse-inventory-system-master/delete_group.php?id=6'</msg>
+<arg>${DELETE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-10-12T01:55:57.574050" elapsed="0.344384"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-10-12T01:55:58.919723" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-10-12T01:55:57.918962" elapsed="1.000928"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-10-12T01:55:58.920631" level="INFO">Opening url 'http://localhost/warehouse-inventory-system-master/group.php'</msg>
+<arg>${GROUP_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-10-12T01:55:58.920354" elapsed="0.311611"/>
+</kw>
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>group.php</arg>
+<arg>10s</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-10-12T01:55:59.232476" elapsed="0.256030"/>
+</kw>
+<kw name="Page Should Not Contain" owner="SeleniumLibrary">
+<msg time="2026-10-12T01:56:00.267458" level="INFO">Current page does not contain text 'Robot Group UPDATED 20261012015539'.</msg>
+<arg>${UPDATED_GROUP}</arg>
+<doc>Verifies the current page does not contain ``text``.</doc>
+<status status="PASS" start="2026-10-12T01:55:59.489027" elapsed="0.778622"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Group deleted successfully</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-10-12T01:56:00.268331" elapsed="0.000558"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Group CRUD completed successfully</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-10-12T01:56:00.269222" elapsed="0.000487"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2026-10-12T01:56:00.270195" elapsed="2.389126"/>
+</kw>
+<status status="PASS" start="2026-10-12T01:55:32.422755" elapsed="30.236914"/>
+</test>
+<status status="PASS" start="2026-10-12T01:55:22.016350" elapsed="40.644388"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Test Group Crud" id="s1" pass="2" fail="0" skip="0">Test Group Crud</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
